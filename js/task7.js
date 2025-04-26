@@ -1,19 +1,31 @@
-// Напишіть функцію getNumbers(min, max), що приймає 2 параметри - 
-// мінімальне і максимальне число відповідно.
-// Напишіть цикл всередині функції, який виводить у консоль
-// всі числа від max до min за спаданням.
-// Окрім цього, підрахуйте суму всіх парних чисел в цьому циклі
-// і поверніть її з функції.
-function getNumbers(min, max) {
-    let sum = 0;
-    for (let i=max; i >= min; i--) {
-        console.log(i);
-        
-        if (i % 2 === 0) {
-            sum += i;
-        }
-    }
-    return sum;
+// Напишіть скрипт, який для об'єкту user, послідовно:
+// 1 - додасть поле mood зі значенням 'happy',
+// 2 - замінить hobby на 'skydiving',
+// 3 - замінить значення premium на false,
+// 4 - виведе зміст об'єкта user у форматі
+// '<ключ>:<значення>' використовуя Object.keys() та for...of
+
+// const user = {
+//     name: "John",
+//     age: 20,
+//     hobby: "tenis",
+//     premium: true,
+//   };
+
+
+const user = {
+    name: "John",
+    age: 20,
+    hobby: "tenis",
+    premium: true,
+  };
+
+user.mood = 'happy';
+
+user.hobby = 'skydiving';
+
+user.premium = false;
+
+for (const key of Object.keys(user)) {
+    console.log(`${key}:${user[key]}`);
 }
-const result = getNumbers(1, 10);
-console.log("Сума парних числе:"+result);

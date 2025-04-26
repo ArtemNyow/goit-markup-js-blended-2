@@ -1,29 +1,23 @@
-// Змінна num може набувати 4 значення: '1', '2', '3' або '4' 
-// (запитуй це значення у користувача через prompt). 
-// Якщо вона має значення '1', то у змінну result запишіть 'зима',
-// якщо має значення '2' - 'весна' і так далі.
-// Розв'яжіть завдання через switch-case.
-// Не забудьте про дефолтне значення, на випадок, якщо користувач 
-// введе в prompt щось інше. В такому випадку result має набувати значення:
-// "Вибачте, але ви маєте ввести значення від 1 до 4 включно".
-// Значення змінної result виведіть в консоль.
-const number = prompt("Введіть число від 1 до 4");
-let result;
-switch (Number(number)) {
-    case 1:
-        result = "Зима";
-        break;
-    case 2:
-        result = "Весна";
-        break;
-    case 3:
-        result = "Літо";
-        break;
-    case 4:
-        result = "Осінь";
-        break;
-    default:
-        result = "Вибачте, але ви маєте ввести значення від 1 до 4 включно";
-        break;
+// Напишіть функцію caclculateAverage(),
+// яка приймає довільну кількість
+// аргументів і повертає їхнє середнє значення.
+// Додайте перевірку, що аргументи - це числа.
+
+function calculateAverage(...args) {
+    for (let num of args) {
+        if (typeof num !== 'number' || isNaN(num)) {
+           console.log('Усі аргументи повинні бути числами');
+        }
+    }
+    let sum = 0;
+    for (let num of args) {
+        sum += num;
+    }
+    return sum / args.length;
 }
-console.log(result);
+
+// Приклади використання:
+console.log(calculateAverage(1, 3, 3, 4)); // 2.75
+console.log(calculateAverage(10, 20, 30)); // 20
+console.log(calculateAverage(5));         // 5
+console.log(calculateAverage(1, '2', 3)); // Викине помилку

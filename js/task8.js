@@ -1,13 +1,23 @@
-// Напишіть функцію min(a, b), яка приймає 2 числа і повертає меньше з них.
-// Потрібно додати перевірку, що функція отримує саме числа, в іншому випадку
-// повертати з функції рядок - 'Not a number!'.
-function min(a, b) {
-    if (isNaN(a) || isNaN(b)) {
-        return "Not a number";
-    } else {
-        return a < b ? a : b;
-    }
+// Є об'єкт, в якому зберігаються зарплати команди
+// Напишіть код для додавання усіх зарплат та
+// збережіть його результат в змінній sum.
+// Якщо об'єкт salaries пустий, то результат має бути 0
+
+// const salaries = {
+//     Mango: 100,
+//     Poly: 160,
+//     Ajax: 1470,
+//  };
+
+const salaries = {
+    Mango: 100,
+    Poly: 160,
+    Ajax: 1470,
+};
+  
+let sum = 0;
+
+for (const key in salaries) {
+    sum += salaries[key];
 }
-console.log(min(5, NaN));
-console.log(min("A", 10));
-console.log(min(5, 10));
+console.log(sum)
